@@ -13,9 +13,11 @@
         $resultado = $conn->query($sql);
 
         if ($resultado->num_rows > 0){
+            // ele busca se achou um numero de linha, caso tenha info ele acha linha X por exemplo, caso não ache será 0
             $_SESSION["usuario"] = $usuario;
             header("Location: public/home.php");
             exit();
+            // login validado
         }else{
             $erro = "Usuário ou senha inválidos!";
         }
