@@ -1,4 +1,5 @@
 <?php
+    //componente fora da pasta componente pois é relacionado a infraestrutura
 
     $host = "localhost";
     $user = "root";
@@ -6,11 +7,14 @@
     $db = "sistema_simples_m1";
 
     $conn = new mysqli($host,$user,$pass,$db);
+    // conexão com o banco de dados, definindo variáveis e tudo
+
 
     if($conn->connect_error){
         die("Erro na conexão!");
     }else{
         echo "<script>console.log('Banco conectado com sucesso!')</script>";
     };
+    // apenas visual para sabermos que o db está conectado com o sistema. Geralmente não é utilizado
 
 ?>
