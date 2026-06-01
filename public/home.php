@@ -3,11 +3,14 @@ session_start();
 if(!isset($_SESSION["usuario"])){
     header("Location: ../index.php");
     exit();
+    // caso alguem acesse a pgn via link, ele irá fazer igual uma barreira
 }
 
 include("../infra/db/connect.php");
+    // incluir o connect feito em outra pgn
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // post sempre em maiusculo
     $novoUsuario = $_POST['usuario'];
     $novaSenha = $_POST['senha'];
 
@@ -15,11 +18,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     VALUES ('$novoUsuario','$novaSenha')";  
 
     if($conn->query($sql) === TRUE){
+        // query -> pedido de informação enviado a um db
         echo "<script> alert('Usuário cadastrado com sucesso!')</script>";
     }else{
         echo "<script> alert('Erro ao cadastrar')</script>";
     }
-
+    // adição de novo usuário
 };
 
 ?>
