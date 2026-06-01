@@ -9,15 +9,16 @@
     </tr>
 
     <?php
-    
+    // componente table para ser utilizado em vários códigos
     $sqlTodosUsuarios = "SELECT * FROM usuarios";
 
     $resultadoTodosUsuarios = $conn->query($sqlTodosUsuarios);
 
     while($linha = $resultadoTodosUsuarios->fetch_assoc()){
 
-    // o fetch assoc
+    // o fetch assoc é para criar a quantidade de linhas necessárias na tabela
 
+        // echo é como se fosse o "inner.html"
         echo "  <tr>
                     <td>". $linha['id'] . "</td>
                     <td>". $linha['usuario'] . "</td>
@@ -27,6 +28,8 @@
 
     }
     
+
+
     ?>
 
     
