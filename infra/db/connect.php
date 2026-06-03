@@ -2,9 +2,10 @@
     //componente fora da pasta componente pois é relacionado a infraestrutura
 
     $host = "localhost";
-    $user = "root";
-    $pass = "root";
     $db = "sistema_simples_m1";
+    $pass = "root";
+    $user = "root";
+    
 
     $conn = new mysqli($host,$user,$pass,$db);
     // conexão com o banco de dados, definindo variáveis e tudo
