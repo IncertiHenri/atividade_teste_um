@@ -21,6 +21,7 @@
                 <button name="atualizar" id="atualizar" type="submit">Atualizar</button>
             </form>
 
+
             <a href="../home.php">Home</a>
 <?php
             session_start();
@@ -43,7 +44,11 @@
              }
 
 
-?>
 
+?>
+<?php
+            include("../components/table.php");
+
+?>
 </body>
 </html>
