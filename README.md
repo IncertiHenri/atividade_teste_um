@@ -16,3 +16,13 @@
 ### Todas as linhas foram extremamente difíceis, porém ao final consegui localizar os devidos problemas e erros no código, como a atualização infinita. Provavelmente após a aula irei revisar linha por linha para verificar a lógica de cada uma.
 
 ### Apenas falta o "D" do "CRUD". Irei verificar assim que possível para que eu consiga compreender cada uma das linhas, funcionalidades e códigos do sistema.
+
+# Documentando a tentativa de iniciar o sistema em casa
+
+### Depois de um grande período de tempo, consegui instalar tudo e rodar o código. Por algum motivo a porta 3306 estava bloquada(mesmo verificando que não) e não poderia ser utilizada, assim alterei para 3308. Fiz várias alterações até mesmo na documentação do código pois precisava definir a porta 3308 como diretório e não mais a 3306.
+
+### A parte da aplicação do delete, foi realmente bem fácil e até divertida de se fazer. Definitivamente o que demorou mais foi a implentação do XAMPP no meu computador pessoas, ainda vou ler e reler algumas linhas do código pois me restam algumas dúvidas ainda sobre algumas partes. Quem sabe futuramente melhorar esse código.
+
+# Finalização
+
+### Diversas práticas foram utilizadas, porém como ainda foi nosso primeiro contato direto com essa linguagem, é um pouco confuso. Com o tempo irei pegar o jeito, com a lógica necessária e cada sintaxe correta que é muito importante.
