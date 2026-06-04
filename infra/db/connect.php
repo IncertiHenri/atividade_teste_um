@@ -9,7 +9,7 @@
 
     $conn = new mysqli($host,$user,$pass,$db);
     // conexão com o banco de dados, definindo variáveis e tudo
-
+    // utilizar $port = 3308 se for fazer em casa
 
     if($conn->connect_error){
         die("Erro na conexão!");

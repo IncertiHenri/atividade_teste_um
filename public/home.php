@@ -68,7 +68,7 @@ include("../infra/db/connect.php");
     <h3>Atualizar</h3>
             <a href="components/update.php">Atualizar</a>
     <h3>Deletar</h3>
-            <a href="components/update.php">Atualizar</a>
+            <a href="components/delete.php">Atualizar</a>
 
 </body>
 </html>
