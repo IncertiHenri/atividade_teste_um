@@ -25,7 +25,10 @@
             <a href="../home.php">Home</a>
 <?php
             session_start();
-
+    if(!isset($_SESSION["usuario"])){
+            header("Location: ../index.php");
+            exit();
+        }
             include("../../infra/db/connect.php");
 
              if(isset($_POST["atualizar"])){
