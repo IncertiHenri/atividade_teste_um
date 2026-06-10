@@ -27,18 +27,33 @@
         include("../../infra/db/connect.php");
 
         if(isset($_POST["deletar"])){
-        $deletar = $_POST["id"];
 
-        $sql = "DELETE FROM usuarios WHERE id = '$deletar'";
+            $deletarID = $_POST["id"];
 
-        if($conn->query($sql) === TRUE){
-               // query -> pedido de informação enviado a um db
-                   echo "<script> alert('Usuário deletado com sucesso!')</script>";
-               }else{
-                   echo "<script> alert('Erro ao deletar')</script>";
-               }
-        }
+                echo "
+                <h3>Tem certeza que deseja deletar?</h3>
 
+                <form method='POST'>
+                    <input type='hidden' name='id' value='$deletarID'>
+                    <button type='submit' name='confirmar_deletar'> Sim </button>
+                </form>";
+        
+            }
+            
+            $deletarID = $_POST["id"];
+
+            if(isset($_POST["confirmar_deletar"])){
+    
+            $sql = "DELETE FROM usuarios WHERE id = '$deletarID'";
+    
+            if($conn->query($sql) === TRUE){
+                   // query -> pedido de informação enviado a um db
+                       echo "<script> alert('Usuário deletado com sucesso!')</script>";
+                   }else{
+                       echo "<script> alert('Erro ao deletar')</script>";
+                   }
+            }
+            
         ?>
 
         <?php

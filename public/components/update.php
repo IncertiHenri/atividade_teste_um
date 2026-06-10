@@ -8,7 +8,7 @@
 
     <h3>Atualizar dados</h3>
             <p>Escolha um id e atualize os dados</p>
-            <form method="POST" id="atualizar" name="atualizar">
+            <form method="POST">
                 <label>ID:</label>
                 <input type="number" name="id" id="id">
                 <br>
@@ -18,11 +18,12 @@
                 <label>Senha atualizada:</label>
                 <input type="password"name="senhaAtualizada" id="senhaAtualizada">
                 <br>
-                <button name="atualizar" id="atualizar" type="submit">Atualizar</button>
+                <button name="atualizar" type="submit">Atualizar</button>
             </form>
 
 
             <a href="../home.php">Home</a>
+            
 <?php
             session_start();
     if(!isset($_SESSION["usuario"])){
