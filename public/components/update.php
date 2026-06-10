@@ -33,21 +33,30 @@
             include("../../infra/db/connect.php");
 
              if(isset($_POST["atualizar"])){
+
                 $id = $_POST["id"];
                 $usuario = $_POST["usuarioAtualizado"];
                 $senha = $_POST["senhaAtualizada"];
 
-                $sql = "UPDATE usuarios SET usuario = '$usuario', senha = '$senha' WHERE id = '$id'";
+                if(strlen($usuario) <= 0 || strlen($senha) <= 0 || strlen($id) <= 0){
+                    header("Location: update.php?erro=1");
+                    exit();
+                } else {
+                    $sql = "UPDATE usuarios SET usuario = '$usuario', senha = '$senha' WHERE id = '$id'";
 
-                if($conn->query($sql) === TRUE){
-               // query -> pedido de informação enviado a um db
-                   echo "<script> alert('Usuário atualizado com sucesso!')</script>";
-               }else{
-                   echo "<script> alert('Erro ao atualizar')</script>";
-               }
-             }
+                    if($conn->query($sql) === TRUE){
+                    header("Location: update.php?sucesso=1");
+                    exit();
+                        }
+                    }
+                }
 
-
+    if(isset($_GET["sucesso"])){
+        echo "<script>alert('Usuário atualizado!')</script>";
+    } 
+    if(isset($_GET["erro"])) {
+        echo "<script>alert('Insira usuário, senha e ID válidos!')</script>";
+    }
 
 ?>
 <?php

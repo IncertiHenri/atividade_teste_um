@@ -8,20 +8,30 @@ if(!isset($_SESSION["usuario"])){
 
 include("../infra/db/connect.php");
     // incluir o connect feito em outra pgn
-
     if(isset($_POST["cadastrar"])){
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
+
     $novoUsuario = $_POST['usuario'];
     $novaSenha = $_POST['senha'];
 
-    $sql = "INSERT INTO usuarios (usuario, senha)
-            VALUES ('$novoUsuario', '$novaSenha')";
-
-    if($conn->query($sql) === TRUE){
-        header("Location: home.php");
+    if(strlen($novoUsuario) <= 0 || strlen($novaSenha) <= 0){
+        header("Location: home.php?erro=1");
         exit();
+    } else {
+        $sql = "INSERT INTO usuarios (usuario, senha)
+                VALUES ('$novoUsuario', '$novaSenha')";
+
+        if($conn->query($sql) === TRUE){
+        header("Location: home.php?sucesso=1");
+        exit();
+            }
+        }
     }
-}
+
+    if(isset($_GET["sucesso"])){
+        echo "<script>alert('Usuário cadastrado')</script>";
+    } 
+    if(isset($_GET["erro"])) {
+        echo "<script>alert('Insira usuário e senha válidos!')</script>";
     }
 
 ?>
@@ -46,11 +56,9 @@ include("../infra/db/connect.php");
         <input type="password" name="senha">
         <br>
         <?php
-        
             if(isset($erro)){
                 echo $erro;
             };
-        
         ?>
         <br>
         <button type="submit" name="cadastrar">Cadastrar</button>
@@ -68,7 +76,7 @@ include("../infra/db/connect.php");
     <h3>Atualizar</h3>
             <a href="components/update.php">Atualizar</a>
     <h3>Deletar</h3>
-            <a href="components/delete.php">Atualizar</a>
+            <a href="components/delete.php">Deletar</a>
 
 </body>
 </html>

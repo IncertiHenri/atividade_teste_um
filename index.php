@@ -11,7 +11,7 @@
         $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
 
         $resultado = $conn->query($sql);
-
+        
         if ($resultado->num_rows > 0){
             $_SESSION["usuario"] = $usuario;
             header("Location: public/home.php");
@@ -39,7 +39,7 @@
         <input type="password" name="senha">
         <br>
         <?php
-        
+
             if(isset($erro)){
                 echo $erro;
             };
