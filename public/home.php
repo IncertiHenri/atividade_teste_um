@@ -50,7 +50,25 @@ include("../infra/db/connect.php");
 </head>
 <body>
     <h3>Bem-Vindo! <?php echo $_SESSION["usuario"]; ?></h3>
-    <a href="logout.php"> Sair</a>
+    <form method="get">
+    <button type="submit" name="sair">Sair</button>
+    </form>
+
+    <?php
+    
+        if(isset($_GET["sair"])){
+            echo "
+                <h3>Tem certeza que deseja sair?</h3>
+
+                <form method='get'>
+                    <button type='submit' name='confirmar_sair'> Sim </button>
+                </form>";
+        }
+
+        if(isset($_GET["confirmar_sair"])){
+            header("Location: logout.php");
+        }
+    ?>
 
     <hr>
     <h4>Cadastro de Novo Usuário.</h4>
