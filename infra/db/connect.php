@@ -3,11 +3,12 @@
 
     $host = "localhost";
     $db = "sistema_simples_m1";
-    $pass = "root";
+    $pass = "";
     $user = "root";
+    $port = 3308;
     
 
-    $conn = new mysqli($host,$user,$pass,$db);
+    $conn = new mysqli($host,$user,$pass,$db,$port);
     // conexão com o banco de dados, definindo variáveis e tudo
     // utilizar $port = 3308 se for fazer em casa
 

@@ -12,7 +12,7 @@
         <p>Escolha um id e delete os dados</p>
         <form method="POST">
             <label>ID:</label>
-            <input type="number" name="id" id="id">
+            <input type="number" name="id">
             <button name="deletar" type="submit">Deletar</button>
         </form>
 
@@ -26,9 +26,14 @@
         }
         include("../../infra/db/connect.php");
 
-        if(isset($_POST["deletar"])){
 
-            $deletarID = $_POST["id"];
+        if(isset($_POST["deletar"])){
+        $deletarID = $_POST["id"];
+        if(empty($_POST["id"])){
+        header("Location: delete.php?erro=1");
+        exit();
+        } else {
+        if(isset($_POST["deletar"])){
 
                 echo "
                 <h3>Tem certeza que deseja deletar?</h3>
@@ -38,22 +43,39 @@
                     <button type='submit' name='confirmar_deletar'> Sim </button>
                 </form>";
         
-            }
-            
-            $deletarID = $_POST["id"];
+                }
+            }     
+        } 
+                
+                if(isset($_POST["confirmar_deletar"])){
+                
+                $deletarID = $_POST["id"];
+        
+                $sql = "DELETE FROM usuarios WHERE id = '$deletarID'";
 
-            if(isset($_POST["confirmar_deletar"])){
-    
-            $sql = "DELETE FROM usuarios WHERE id = '$deletarID'";
-    
-            if($conn->query($sql) === TRUE){
-                   // query -> pedido de informação enviado a um db
-                       echo "<script> alert('Usuário deletado com sucesso!')</script>";
-                   }else{
-                       echo "<script> alert('Erro ao deletar')</script>";
-                   }
-            }
-            
+                if($conn->query($sql) === TRUE){
+                       // query -> pedido de informação enviado a um db
+                           header("Location: delete.php?sucesso=1");
+                            exit();
+                       }else{
+                           header("Location: delete.php?erro=1");
+                        exit();
+                       }
+                }
+        
+        
+                if(isset($_GET["sucesso"])) {
+                    echo "<script>
+                        alert('Usuário deletado!');
+                        window.history.replaceState({}, document.title, 'delete.php');
+                        </script>";
+                } 
+                if(isset($_GET["erro"])) {
+                    echo "<script>
+                        alert('Insira ID válido!');
+                        window.history.replaceState({}, document.title, 'delete.php');
+                        </script>";
+                }   
         ?>
 
         <?php

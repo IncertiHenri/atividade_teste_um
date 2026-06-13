@@ -28,10 +28,16 @@ include("../infra/db/connect.php");
     }
 
     if(isset($_GET["sucesso"])){
-        echo "<script>alert('Usuário cadastrado')</script>";
+        echo "<script>
+            alert('Usuário cadastrado');
+            window.history.replaceState({}, document.title, 'home.php');
+            </script>";
     } 
     if(isset($_GET["erro"])) {
-        echo "<script>alert('Insira usuário e senha válidos!')</script>";
+        echo "<script>
+            alert('Insira usuário e senha válidos!');
+            window.history.replaceState({}, document.title, 'home.php');
+            </script>";
     }
 
 ?>

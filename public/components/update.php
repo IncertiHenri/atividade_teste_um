@@ -52,10 +52,16 @@
                 }
 
     if(isset($_GET["sucesso"])){
-        echo "<script>alert('Usuário atualizado!')</script>";
+        echo "<script>
+            alert('Usuário atualizado!');
+            window.history.replaceState({}, document.title, 'update.php');
+            </script>";
     } 
     if(isset($_GET["erro"])) {
-        echo "<script>alert('Insira usuário, senha e ID válidos!')</script>";
+        echo "<script>
+            alert('Insira usuário, senha e ID válidos!');
+            window.history.replaceState({}, document.title, 'update.php');
+            </script>";
     }
 
 ?>
