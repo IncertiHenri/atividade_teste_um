@@ -1,0 +1,50 @@
+:root{
+    --creme: rgb(253, 252, 245);
+    --azul-sesi: rgb(0, 119, 255);
+    --branco: rgb(255, 255, 255);
+    --cinza-claro: rgb(212, 212, 212);
+}
+
+#index {
+    background-color: var(--creme);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--azul-sesi);
+}
+
+label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input{
+    background-color: var(--creme);
+    border: solid 1px var(--azul-sesi);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+
+#botao-index{
+    background-color: var(--creme);
+    border: solid 1px var(--azul-sesi);
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+
+}
+
+#pagina-login{
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px var(--cinza-claro);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+}
