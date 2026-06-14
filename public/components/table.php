@@ -1,4 +1,6 @@
-<h4>Usuários Cadastrados</h4>
+<link rel="stylesheet" href="../../assets/style.css">
+
+<h4 class="titulo">Usuários Cadastrados</h4>
 
 <table border="1" cellpadding="3">
 
@@ -14,20 +16,20 @@
 
     $resultadoTodosUsuarios = $conn->query($sqlTodosUsuarios);
 
-    while($linha = $resultadoTodosUsuarios->fetch_assoc()){
+    while ($linha = $resultadoTodosUsuarios->fetch_assoc()) {
 
-    // o fetch assoc é para criar a quantidade de linhas necessárias na tabela
-
+        // o fetch assoc é para criar a quantidade de linhas necessárias na tabela
+    
         // echo é como se fosse o "inner.html"
         echo "  <tr>
-                    <td>". $linha['id'] . "</td>
-                    <td>". $linha['usuario'] . "</td>
-                    <td>". $linha['senha'] . "</td>
+                    <td>" . $linha['id'] . "</td>
+                    <td>" . $linha['usuario'] . "</td>
+                    <td>" . $linha['senha'] . "</td>
                 </tr>
         ";
 
     }
 
     ?>
-    
+
 </table>

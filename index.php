@@ -33,28 +33,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <body id="index">
     <div id="pagina-login">
-    <h1 class="titulo">Sistema de Login Simples</h1>
+        <h1 class="titulo">Sistema de Login Simples</h1>
 
-    <form method="POST">
-        <label>Usuário:</label>
-        <input type="text" name="usuario">
-        <br>
-        <label>Senha:</label>
-        <input type="password" name="senha">
-        <br>
-        <?php
+        <form method="POST">
+            <label>Usuário:</label>
+            <input type="text" name="usuario">
+            <br>
+            <label>Senha:</label>
+            <input type="password" name="senha">
+            <br>
+            <?php
 
-        if (isset($erro)) {
-            echo $erro;
-        }
-        ;
+            if (isset($erro)) {
+                echo $erro;
+            }
+            ;
 
-        // esse erro serve ara alguma coisa
-        
-        ?>
-        <br>
-        <button type="submit" id="botao-index">Entrar</button>
-    </form>
+            // esse erro serve ara alguma coisa
+            
+            ?>
+            <br>
+            <button type="submit" id="botao-index">Entrar</button>
+        </form>
 
     </div>
 </body>

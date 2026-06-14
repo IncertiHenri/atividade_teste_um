@@ -1,4 +1,4 @@
-:root{
+:root {
     --creme: rgb(253, 252, 245);
     --azul-sesi: rgb(0, 119, 255);
     --branco: rgb(255, 255, 255);
@@ -17,18 +17,18 @@
     color: var(--azul-sesi);
 }
 
-label{
+label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input{
+input {
     background-color: var(--creme);
     border: solid 1px var(--azul-sesi);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
 }
 
-#botao-index{
+#botao-index {
     background-color: var(--creme);
     border: solid 1px var(--azul-sesi);
     padding: 5px;
@@ -37,7 +37,7 @@ input{
 
 }
 
-#pagina-login{
+#pagina-login {
     background-color: var(--branco);
     border-radius: 10px;
     box-shadow: 1px 1px 10px var(--cinza-claro);
@@ -47,4 +47,43 @@ input{
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 10px;
+}
+
+#home {
+    background-color: var(--creme);
+}
+
+.botao-home {
+    background-color: var(--azul-sesi);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--creme);
+    border: 0;
+}
+
+th {
+    color: var(--azul-sesi);
+    border: 2px solid var(--cinza-claro);
+}
+
+table {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid var(--cinza-claro);
+}
+
+tr {
+    border: 2px solid var(--cinza-claro);
+}
+
+td {
+    border: 2px solid var(--cinza-claro);
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

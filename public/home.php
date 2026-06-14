@@ -47,24 +47,24 @@ if (isset($_GET["erro"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <title>Home</title>
 </head>
 
-<body>
-    <h3>Bem-Vindo! <?php echo $_SESSION["usuario"]; ?></h3>
+<body id="home">
+    <h3 class="titulo">Bem-Vindo! <?php echo $_SESSION["usuario"]; ?></h3>
     <form method="get">
-        <button type="submit" name="sair">Sair</button>
+        <button type="submit" name="sair" class="botao-home">Sair</button>
     </form>
 
     <?php
 
     if (isset($_GET["sair"])) {
         echo "
-                <h3>Tem certeza que deseja sair?</h3>
+                <h3 class='titulo'>Tem certeza que deseja sair?</h3>
 
                 <form method='get'>
-                    <button type='submit' name='confirmar_sair'> Sim </button>
+                    <button type='submit' name='confirmar_sair' class='botao-home'> Sim </button>
                 </form>";
     }
 
@@ -74,14 +74,13 @@ if (isset($_GET["erro"])) {
     ?>
 
     <hr>
-    <h4>Cadastro de Novo Usuário.</h4>
-    <form method="POST">
+    <h4 class="titulo">Cadastro de Novo Usuário</h4>
+    <form method="POST" class="form-flex">
         <label>Usuário:</label>
         <input type="text" name="usuario">
         <br>
         <label>Senha:</label>
         <input type="password" name="senha">
-        <br>
         <?php
         if (isset($erro)) {
             echo $erro;
@@ -89,7 +88,7 @@ if (isset($_GET["erro"])) {
         ;
         ?>
         <br>
-        <button type="submit" name="cadastrar">Cadastrar</button>
+        <button type="submit" name="cadastrar" class="botao-home">Cadastrar</button>
     </form>
     <hr>
 
@@ -101,10 +100,10 @@ if (isset($_GET["erro"])) {
 
     <hr>
 
-
-    <h3>Atualizar</h3>
+    <h3 class="titulo">Atualizar</h3>
     <a href="components/update.php">Atualizar</a>
-    <h3>Deletar</h3>
+    <hr>
+    <h3 class="titulo">Deletar</h3>
     <a href="components/delete.php">Deletar</a>
 
 </body>
